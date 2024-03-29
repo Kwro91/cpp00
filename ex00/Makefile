@@ -6,7 +6,7 @@
 #    By: besalort <besalort@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/28 15:49:11 by besalort          #+#    #+#              #
-#    Updated: 2024/03/28 15:59:57 by besalort         ###   ########.fr        #
+#    Updated: 2024/03/29 14:02:40 by besalort         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,3 +35,6 @@ clean	:
 
 fclean	:	clean
 			rm -rf $(NAME)
+
+re		:	fclean
+			make
