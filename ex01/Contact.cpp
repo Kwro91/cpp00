@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:26:55 by besalort          #+#    #+#             */
-/*   Updated: 2024/03/29 20:41:04 by besalort         ###   ########.fr       */
+/*   Updated: 2024/04/02 19:08:28 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	Contact::search(void) {
 
 void	Contact::setFirstName() {
 	std::string	str;
+
 	std::cout << "First Name: ";
 	std::cin >> str;
 	std::cout << std::endl;
@@ -68,6 +69,7 @@ void	Contact::setFirstName() {
 
 void	Contact::setLastName() {
 	std::string	str;
+
 	std::cout << "Last Name: ";
 	std::cin >> str;
 	std::cout << std::endl;
@@ -76,6 +78,7 @@ void	Contact::setLastName() {
 
 void	Contact::setNickname() {
 	std::string	str;
+
 	std::cout << "Nickname: ";
 	std::cin >> str;
 	std::cout << std::endl;
@@ -83,15 +86,26 @@ void	Contact::setNickname() {
 }
 
 void	Contact::setPhoneNumber() {
-	int	nb;
+	double				nb;
+	std::string			str;
+	
 	std::cout << "Phone number: ";
-	std::cin >> nb;
-	std::cout << std::endl;
+	while (std::getline(std::cin, str))
+	{
+		std::stringstream ss(str);
+		if (ss >> nb)
+		{
+			break;
+		}
+		else
+			std::cout << "Wrong input, try again "<< std::endl;
+	}
 	this->phoneNumber = nb;
 }
 
 void	Contact::setDarkestSecret() {
 	std::string	str;
+
 	std::cout << "Darkest Secret: ";
 	std::cin >> str;
 	std::cout << std::endl;

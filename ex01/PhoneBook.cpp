@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:26:58 by besalort          #+#    #+#             */
-/*   Updated: 2024/03/29 20:37:27 by besalort         ###   ########.fr       */
+/*   Updated: 2024/03/29 20:47:58 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,4 @@ void	PhoneBook::search(void) {
 		this->instance[j].search();
 		j++;
 	}
-	
 }
