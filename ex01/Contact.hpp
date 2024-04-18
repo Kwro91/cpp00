@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:27:49 by besalort          #+#    #+#             */
-/*   Updated: 2024/04/18 15:48:03 by besalort         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:29:32 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Contact {
 		std::string firstName;
 		std::string lastName;
 		std::string nickname;
-		int			phoneNumber;
+		long int	phoneNumber;
 		std::string darkestSecret;
 
 	public:
@@ -31,10 +31,11 @@ class Contact {
 		Contact(void);
 		~Contact(void);
 		
+		int		checkPhone(std::string str);
 		int		isInput(std::string str);
 		void	printContact();
 		void	printList(std::string str);
-		void	search(void);
+		void	search();
 		void	setFirstName();
 		void	setLastName();
 		void	setNickname();

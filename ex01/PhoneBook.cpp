@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:26:58 by besalort          #+#    #+#             */
-/*   Updated: 2024/04/18 15:39:57 by besalort         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:40:05 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,15 @@ PhoneBook::~PhoneBook(void) {
 }
 
 int		PhoneBook::checkContact(std::string str) {
-	int	nb = -1;
+	long int	nb;
 
 	if (isDigit(str) != 1)
 		return (0);
-	nb = std::stoi(str);
-	if (nb > this->i%8)
+	nb = std::stol(str);
+	if (nb > this->i || nb > 8|| nb < 0 || nb > 2147483647)
 		return (0);
-	this->instance[nb - 1].printContact();
+	if (nb > 0)
+		this->instance[nb - 1].printContact();
 	return (1);
 }
 
@@ -39,8 +40,6 @@ void	PhoneBook::add() {
 	int	j = 0;
 
 	j = i%8;
-	// if (this->i == 8)
-	// 	this->i = 0;
 	this->instance[j].setFirstName();
 	this->instance[j].setLastName();
 	this->instance[j].setNickname();
@@ -64,12 +63,12 @@ void	PhoneBook::search(void) {
 	std::cout << std::endl;
 	if (i == 0)
 		return ;
-	std::cout << "Chose a contact: ";
+	std::cout << "Chose a contact (0 for none): ";
 	std::cin >> str;
 	while (checkContact(str) != 1)
 	{
 		std::cout << std::endl;
-		std::cout << "Wrong input, chose a contact: ";
+		std::cout << "\033[1;31mWrong input\033[0m" << ", chose a contact (0 for none): ";
 		std::cin >> str;
 	}
 	std::cout << std::endl;

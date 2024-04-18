@@ -5,17 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: besalort <besalort@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/28 15:49:11 by besalort          #+#    #+#              #
-#    Updated: 2024/04/18 16:47:42 by besalort         ###   ########.fr        #
+#    Created: 2024/04/18 16:48:07 by besalort          #+#    #+#              #
+#    Updated: 2024/04/18 16:48:34 by besalort         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = book
+NAME = job
 
-SRC = ./main.cpp \
-	./Contact.cpp \
-	./PhoneBook.cpp \
-	./utils.cpp \
+SRC = ./tests.cpp \
+	./Account.cpp \
 
 CC =	c++
 

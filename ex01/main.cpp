@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:33:39 by besalort          #+#    #+#             */
-/*   Updated: 2024/04/18 15:48:25 by besalort         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:07:45 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,16 @@ int	main()
 
 	while (1)
 	{
-		std::cout << "\033[1;34mInput a command: \033[0m";
+		std::cout << "\033[1;33mInput a command: \033[0m";
 		std::cin >> line;
 		if (line == "EXIT")
 			break;
-		if (line == "ADD")
+		else if (line == "ADD")
 			book.add();
-		if (line == "SEARCH")
+		else if (line == "SEARCH")
 			book.search();
+		else
+			std::cout << "\033[1;31mWrong input\033[0m" << ", please use ADD, SEARCH, or EXIT" << std::endl;
 	}
 	return (0);
 }

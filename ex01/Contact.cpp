@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:26:55 by besalort          #+#    #+#             */
-/*   Updated: 2024/04/18 15:38:11 by besalort         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:29:38 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,16 @@ Contact::Contact(void) {
 
 Contact::~Contact(void) {
 	// std::cout << "On detruit Contact" << std::endl;
+}
+
+int		Contact::checkPhone(std::string str) {
+	long int	nb;
+	if (isDigit(str) != 1)
+		return (0);
+	nb = std::stol(str);
+	if (nb < 0 || nb > 2147483647)
+		return (0);
+	return (1);
 }
 
 void	Contact::printContact() {
@@ -61,7 +71,7 @@ int	Contact::isInput(std::string str) {
 	return (1);
 }
 
-void	Contact::search(void) {
+void	Contact::search() {
 	printList(this->firstName);
 	std::cout << " | ";
 	printList(this->lastName);
@@ -78,7 +88,7 @@ void	Contact::setFirstName() {
 	while (isInput(str) != 1) 
 	{
 		std::cout << std::endl;
-		std::cout << "Wrong input, first name: ";
+		std::cout << "\033[1;31mWrong input\033[0m" << ", first name: ";
 		std::cin >> str;
 	}
 	std::cout << std::endl;
@@ -93,7 +103,7 @@ void	Contact::setLastName() {
 	while (isInput(str) != 1) 
 	{
 		std::cout << std::endl;
-		std::cout << "Wrong input, last name: ";
+		std::cout << "\033[1;31mWrong input\033[0m" << ", last name: ";
 		std::cin >> str;
 	}
 	std::cout << std::endl;
@@ -108,7 +118,7 @@ void	Contact::setNickname() {
 	while (isInput(str) != 1) 
 	{
 		std::cout << std::endl;
-		std::cout << "Wrong input, nickname: ";
+		std::cout << "\033[1;31mWrong input\033[0m" << ", nickname: ";
 		std::cin >> str;
 	}
 	std::cout << std::endl;
@@ -116,19 +126,19 @@ void	Contact::setNickname() {
 }
 
 void	Contact::setPhoneNumber() {
-	double				nb;
-	std::string			str;
+	long int		nb;
+	std::string		str;
 	
 	std::cout << "Phone number: ";
 	std::cin >> str;
-	while (isDigit(str) != 1) 
+	while (checkPhone(str) != 1)
 	{
 		std::cout << std::endl;
-		std::cout << "Wrong input, phone number: ";
+		std::cout << "\033[1;31mWrong input\033[0m" << ", phone number: ";
 		std::cin >> str;
 	}
 	std::cout << std::endl;
-	nb = stoi(str);
+	nb = stol(str);
 	this->phoneNumber = nb;
 }
 
@@ -140,7 +150,7 @@ void	Contact::setDarkestSecret() {
 	while (isInput(str) != 1) 
 	{
 		std::cout << std::endl;
-		std::cout << "Wrong input, darkest secret: ";
+		std::cout << "\033[1;31mWrong input\033[0m" << ", darkest secret: ";
 		std::cin >> str;
 	}
 	std::cout << std::endl;
