@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:27:52 by besalort          #+#    #+#             */
-/*   Updated: 2024/03/29 14:55:42 by besalort         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:17:09 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class	PhoneBook {
 		
 		void	add();
 		void	search(void);
+		int		checkContact(std::string str);
 };
 
 #endif

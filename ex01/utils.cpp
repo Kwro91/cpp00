@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 17:33:39 by besalort          #+#    #+#             */
-/*   Updated: 2024/04/18 15:48:25 by besalort         ###   ########.fr       */
+/*   Created: 2024/04/18 15:03:46 by besalort          #+#    #+#             */
+/*   Updated: 2024/04/18 15:16:05 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
-#include <iostream>
+#include "utils.hpp"
 
-int	main()
-{
-	Contact		nouveau;
-	PhoneBook	book;
-	std::string line;
+int	isDigit(std::string str) {
+	int i;
 
-	while (1)
+	i = 0;
+	if (str[0] == '\0')
+		return (0);
+	while (str[i])
 	{
-		std::cout << "\033[1;34mInput a command: \033[0m";
-		std::cin >> line;
-		if (line == "EXIT")
-			break;
-		if (line == "ADD")
-			book.add();
-		if (line == "SEARCH")
-			book.search();
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
 	}
-	return (0);
+	return (1);
 }
