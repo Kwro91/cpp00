@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:26:55 by besalort          #+#    #+#             */
-/*   Updated: 2024/04/18 21:29:38 by besalort         ###   ########.fr       */
+/*   Updated: 2024/04/26 17:34:15 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,12 @@ void	Contact::setFirstName() {
 	std::string	str;
 
 	std::cout << "First Name: ";
-	std::cin >> str;
+	getline(std::cin, str);
 	while (isInput(str) != 1) 
 	{
 		std::cout << std::endl;
 		std::cout << "\033[1;31mWrong input\033[0m" << ", first name: ";
-		std::cin >> str;
+		getline(std::cin, str);
 	}
 	std::cout << std::endl;
 	this->firstName = str;
@@ -99,12 +99,12 @@ void	Contact::setLastName() {
 	std::string	str;
 
 	std::cout << "Last Name: ";
-	std::cin >> str;
+	getline(std::cin, str);
 	while (isInput(str) != 1) 
 	{
 		std::cout << std::endl;
 		std::cout << "\033[1;31mWrong input\033[0m" << ", last name: ";
-		std::cin >> str;
+		getline(std::cin, str);
 	}
 	std::cout << std::endl;
 	this->lastName = str;
@@ -114,12 +114,12 @@ void	Contact::setNickname() {
 	std::string	str;
 
 	std::cout << "Nickname: ";
-	std::cin >> str;
+	getline(std::cin, str);;
 	while (isInput(str) != 1) 
 	{
 		std::cout << std::endl;
 		std::cout << "\033[1;31mWrong input\033[0m" << ", nickname: ";
-		std::cin >> str;
+		getline(std::cin, str);;
 	}
 	std::cout << std::endl;
 	this->nickname = str;
@@ -130,12 +130,12 @@ void	Contact::setPhoneNumber() {
 	std::string		str;
 	
 	std::cout << "Phone number: ";
-	std::cin >> str;
+	getline(std::cin, str);;
 	while (checkPhone(str) != 1)
 	{
 		std::cout << std::endl;
 		std::cout << "\033[1;31mWrong input\033[0m" << ", phone number: ";
-		std::cin >> str;
+		getline(std::cin, str);;
 	}
 	std::cout << std::endl;
 	nb = stol(str);
@@ -146,12 +146,12 @@ void	Contact::setDarkestSecret() {
 	std::string	str;
 
 	std::cout << "Darkest Secret: ";
-	std::cin >> str;
+	getline(std::cin, str);;
 	while (isInput(str) != 1) 
 	{
 		std::cout << std::endl;
 		std::cout << "\033[1;31mWrong input\033[0m" << ", darkest secret: ";
-		std::cin >> str;
+		getline(std::cin, str);;
 	}
 	std::cout << std::endl;
 	this->darkestSecret = str;
