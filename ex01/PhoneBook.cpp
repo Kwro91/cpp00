@@ -6,7 +6,7 @@
 /*   By: besalort <besalort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:26:58 by besalort          #+#    #+#             */
-/*   Updated: 2024/04/26 17:34:15 by besalort         ###   ########.fr       */
+/*   Updated: 2024/07/18 16:18:33 by besalort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,12 @@ void	PhoneBook::search(void) {
 	if (i == 0)
 		return ;
 	std::cout << "Chose a contact (0 for none): ";
-	getline(std::cin, str);;
+	getline(std::cin, str);
 	while (checkContact(str) != 1)
 	{
 		std::cout << std::endl;
 		std::cout << "\033[1;31mWrong input\033[0m" << ", chose a contact (0 for none): ";
-		getline(std::cin, str);;
+		getline(std::cin, str);
 	}
 	std::cout << std::endl;
 }
