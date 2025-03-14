@@ -14,7 +14,7 @@
 
 ## About the Project
 
-This project is the `CPP 06` learning module of 42 School.
+This project is the `CPP 00` learning module of 42 School.
 All the C++ modules are based on C++98.
 
 This project focuses on `Class`, `Namespaces`, `Member function`, `Static`, `Const` & basics.
